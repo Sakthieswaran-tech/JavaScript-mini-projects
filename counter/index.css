@@ -1,0 +1,36 @@
+main {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  text-align: center;
+}
+
+#value {
+  text-align: center;
+  font-size: 6rem;
+  font-weight: bold;
+}
+
+.btn {
+  color: black;
+  padding: 0.75rem 0.25rem;
+  border: 2px solid black;
+  border-radius: 2rem;
+  background: transparent;
+  text-transform: uppercase;
+  font-size: 0.875rem;
+  transition: 0.3s linear;
+  margin: 0.5rem;
+  cursor: pointer;
+  letter-spacing: 0.05rem;
+  padding: 0.375rem 0.75rem;
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  background-color: black;
+  color: white;
+}
