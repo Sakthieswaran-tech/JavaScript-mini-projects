@@ -1,0 +1,115 @@
+section {
+  padding: 4rem 0;
+}
+
+main {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 4rem;
+  text-transform: capitalize;
+}
+
+.underline {
+  height: 0.25rem;
+  width: 80px;
+  background-color: hsl(205, 78%, 60%);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container {
+  width: 80vw;
+}
+
+.review {
+  background-color: white;
+  padding: 1.5rem 2rem;
+  border-radius: 2px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: 0.3s linear;
+}
+
+.review:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.img-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+
+#person-img {
+  width: 100%;
+  display: block;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: relative;
+}
+
+#author {
+  margin-bottom: 0.25rem;
+  text-align: center;
+  text-transform: capitalize;
+}
+
+#job {
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  color: hsl(205, 78%, 60%);
+  font-size: 0.85rem;
+  text-align: center;
+}
+
+#info {
+  margin-bottom: 0.75rem;
+  line-height: 20px;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+
+.btn-container {
+  margin-left: 50%;
+}
+.prev-btn,
+.next-btn {
+  color: hsl(205, 90%, 76%);
+  font-size: 1.25rem;
+  background: transparent;
+  border-color: transparent;
+  margin: 0.05rem;
+  cursor: pointer;
+  transition: 0.3s linear;
+}
+
+.prev-btn:hover,
+.next-btn:hover {
+  color: hsl(205, 78%, 60%);
+}
+
+.random-btn {
+  margin-top: 0.5rem;
+  background: hsl(205, 100%, 96%);
+  color: hsl(205, 78%, 60%);
+  padding: 00.25rem 0.5rem;
+  text-transform: capitalize;
+  border-radius: 2px;
+  transition: 0.3s linear;
+  border-color: hsl(205, 78%, 60%);
+  cursor: pointer;
+  margin-left: 50%;
+}
+
+.random-btn:hover {
+  background: hsl(205, 78%, 60%);
+  color: hsl(205, 86%, 17%);
+}
