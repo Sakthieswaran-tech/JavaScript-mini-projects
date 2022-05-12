@@ -85,8 +85,22 @@ const sectionCenter=document.querySelector(".section-center");
 
 const filterBtn=document.querySelectorAll(".filter-btn");
 
+const btnContainer=document.querySelector(".btn-container");
+
 window.addEventListener("DOMContentLoaded",function(){
     displayMenuItem(menu);
+    const category=menu.reduce((values,items)=>{
+      if(!values.includes(items.category)){
+        values.push(items.category);
+      }
+      return values;
+    },['all']);
+
+    const categoryBtns=category.map((items)=>{
+      return `<button class="filter-btn" type="button" data-id=${items}>${items}</button>`
+    }).join("");
+
+    btnContainer.innerHTML=categoryBtns;
 });
 
 filterBtn.forEach(function(btn){
