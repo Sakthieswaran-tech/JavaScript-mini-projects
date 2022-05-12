@@ -83,41 +83,13 @@ const menu = [
 
 const sectionCenter=document.querySelector(".section-center");
 
-const filterBtn=document.querySelectorAll(".filter-btn");
 
 const btnContainer=document.querySelector(".btn-container");
 
 window.addEventListener("DOMContentLoaded",function(){
-    displayMenuItem(menu);
-    const category=menu.reduce((values,items)=>{
-      if(!values.includes(items.category)){
-        values.push(items.category);
-      }
-      return values;
-    },['all']);
-
-    const categoryBtns=category.map((items)=>{
-      return `<button class="filter-btn" type="button" data-id=${items}>${items}</button>`
-    }).join("");
-
-    btnContainer.innerHTML=categoryBtns;
+  displayMenuItem(menu);
+  displayMenuButtons();
 });
-
-filterBtn.forEach(function(btn){
-    btn.addEventListener("click",function(e){
-        const category=e.currentTarget.dataset.id;
-        if(category==='all'){
-            displayMenuItem(menu);
-        }else{
-            const menuCategory=menu.filter(function(item){
-                if(category===item.category){
-                    return item;
-                }
-            })
-            displayMenuItem(menuCategory);
-        }
-    })
-})
 
 const displayMenuItem=(menuItems)=>{
     let displayMenu=menuItems.map(function(item){
@@ -137,4 +109,36 @@ const displayMenuItem=(menuItems)=>{
     });
     displayMenu=displayMenu.join('');
     sectionCenter.innerHTML=displayMenu
+}
+
+const displayMenuButtons=()=>{
+  const category=menu.reduce((values,items)=>{
+    if(!values.includes(items.category)){
+      values.push(items.category);
+    }
+    return values;
+  },['all']);
+  
+  const categoryBtns=category.map((items)=>{
+    return `<button class="filter-btn" type="button" data-id=${items}>${items}</button>`
+  }).join("");
+  
+  btnContainer.innerHTML=categoryBtns;
+  const filterBtn=document.querySelectorAll(".filter-btn");
+
+  filterBtn.forEach(function(btn){
+    btn.addEventListener("click",function(e){
+        const category=e.currentTarget.dataset.id;
+        if(category==='all'){
+            displayMenuItem(menu);
+        }else{
+            const menuCategory=menu.filter(function(item){
+                if(category===item.category){
+                    return item;
+                }
+            })
+            displayMenuItem(menuCategory);
+        }
+    })
+})
 }
